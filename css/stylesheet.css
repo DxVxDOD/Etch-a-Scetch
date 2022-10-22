@@ -1,0 +1,35 @@
+body{
+    height: 100vh;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+#header {
+    font-family: monospace;
+    position: absolute;
+    top: 0;
+}
+
+#main {
+
+}
+
+:root {
+    --grid-cols: 1;
+    --grid-rows: 1;
+  }
+  
+  #container {
+    display: grid;
+    height: 500px;
+    width: 500px;
+    grid-template-rows: repeat(var(--grid-rows), 1fr);
+    grid-template-columns: repeat(var(--grid-cols), 1fr);
+  }
+  
+  .grid-item {
+    border: 1px solid #ddd;
+  }
