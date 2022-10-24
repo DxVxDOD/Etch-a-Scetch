@@ -52,3 +52,17 @@ const cells = Array.from(document.querySelectorAll(".grid-item"));
 cells.forEach(cell => cell.addEventListener("click", paint));
 cells.forEach(cell => cell.addEventListener("mousedown", painting));
 cells.forEach(cell => cell.addEventListener("mouseup", paintStop));
+
+//RGB Mode
+function random_rgba() {
+    var o = Math.round, r = Math.random, s = 255;
+    return 'rgba(' + o(r()*s) + ',' + o(r()*s) + ',' + o(r()*s) + ',' + r().toFixed(1) + ')';
+}
+function rgbPainter (random_rgba) {
+    pickedColour = "";
+    pickedColour += random_rgba;
+    return pickedColour;
+}
+
+let rgbBtn = document.getElementById("rgb");
+rgbBtn.addEventListener("click", rgbPainter);
