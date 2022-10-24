@@ -5,17 +5,71 @@ body{
     display: flex;
     justify-content: center;
     align-items: center;
-    flex-direction: column;
+    font-family: monospace;
 }
 
 #header {
   margin-top: 20px;
   font-size: 64px;
-  font-family: monospace;
+  font-weight: 900;
   position: absolute;
   top: 0;
 }
 
+#main {
+  display: flex;
+  justify-content: center;
+  width: 100vw;
+}
+
+.settings {
+  position: absolute;
+  gap: 50px;
+  left: 0;
+  margin-left: 20rem;
+  display: flex;
+  flex-direction: column;
+}
+
+.buttons {
+  gap: 25px;
+  display: flex;
+  flex-direction: column;
+}
+
+button {
+  padding: 10px;
+  border-radius: 5px;
+  border: 2px solid gray;
+}
+
+button:hover {
+  transform: scale(1.025);
+}
+
+.selected {
+  background-color: #36454F;
+  color: wheat;
+  font-weight: bold;
+  border: 2px solid black;
+}
+
+input {
+  background-color: #F9F6EE;
+  border-color: wheat;
+  width: 150px;
+  height: 150px;
+  box-shadow: darkgray 5px 1px 10px;
+}
+
+input:active{
+  box-shadow: darkgray 10px 1px 5px;
+  transform: translateY(4px);
+}
+
+input:hover{
+  transform: scale(1.025);
+}
 
 :root {
     --grid-cols: 1;
