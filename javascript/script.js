@@ -21,6 +21,31 @@ function clicked (e) {
 }
 const btns = Array.from(document.querySelectorAll(".btn"));
 btns.forEach(btn => btn.addEventListener("click", clicked));
+btns.forEach(btn => btn.addEventListener("click", btnf));
+
+function btnf (e) {
+    let targetID = "";
+    targetID += e.target.id;
+    if (targetID === "rgb") {
+        pickedColour = "";
+        pickedColour += random_rgba();
+        return pickedColour;
+    }
+    else if (targetID === "colour") {
+        pickedColour = "";
+        let inp = document.getElementById("head");
+        pickedColour += inp.value;
+        return pickedColour;
+    }
+    else if (targetID === "eraser") {
+        pickedColour = "";
+        pickedColour = "white";
+        return pickedColour;
+    }
+    else if (targetID === "clear") {
+        return wipe();
+    }
+}
 
 // gets the colour from the colour wheel
 function getColour (e) {
@@ -58,11 +83,7 @@ function random_rgba() {
     var o = Math.round, r = Math.random, s = 255;
     return 'rgba(' + o(r()*s) + ',' + o(r()*s) + ',' + o(r()*s) + ',' + r().toFixed(1) + ')';
 }
-function rgbPainter (random_rgba) {
-    pickedColour = "";
-    pickedColour += random_rgba;
-    return pickedColour;
+function wipe () {
+    const grids = Array.from(document.querySelectorAll(".grid-item"));
+    grids.forEach(grid => grid.style.backgroundColor = "white");
 }
-
-let rgbBtn = document.getElementById("rgb");
-rgbBtn.addEventListener("click", rgbPainter);
