@@ -31,15 +31,14 @@ body{
   flex-direction: column;
 }
 
-.buttons {
+.buttons, .buttons2 {
   gap: 25px;
   display: flex;
   flex-direction: column;
 }
 
-button {
+.btn {
   padding: 10px;
-  border-radius: 5px;
   border: 2px solid gray;
 }
 
@@ -94,3 +93,15 @@ input:hover{
   .grid-item:hover {
     box-shadow: 1px 1px 5px 1px gray;
   }
+
+  .buttons2 {
+    position: absolute;
+    right: 0;
+    margin-right: 25rem;
+  }
+
+ .btn2 {
+  width: 75px;
+  height: 75px;
+  font-size: large;
+ }
